@@ -1,0 +1,27 @@
+[project]
+name = "conversion"
+version = "0.1.0"
+description = "Convert SolidWorks assemblies to URDF without SolidWorks"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "cascadio>=0.1.1",
+    "mujoco>=3.14.0",
+    "numpy>=2",
+    "trimesh>=4",
+    "viser>=1.1.1",
+]
+
+[tool.pyrefly]
+project-includes = [
+    "**/*.py*",
+    "**/*.ipynb",
+]
+search-path = ["src"]
+
+[project.scripts]
+conversion = "conversion:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
