@@ -62,7 +62,11 @@ uv run python convert_to_urdf.py \
   --output output/my_arm
 ```
 
-`--model s3` is the only layout that reads `Origin_*` coordinate systems from the assembly. `s5` and `s7` have no such frames; their revolute joints are placed on the drive shafts. `--view` opens the URDF in a browser with viser.
+`--model s3` is the only layout that reads `Origin_*` coordinate systems from the assembly. `s5` and `s7` have no such frames; their revolute joints are placed on the drive shafts. `--view` opens the URDF in a browser with viser after the build. To open an existing URDF without rebuilding:
+
+```bash
+uv run python view_urdf.py output/s3_arm/s3_arm.urdf
+```
 
 Each run writes `output/<name>/<name>.urdf` and one STL per link under `output/<name>/meshes/`.
 
